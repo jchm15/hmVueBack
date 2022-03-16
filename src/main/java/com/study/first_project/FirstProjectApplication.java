@@ -1,4 +1,4 @@
-package com.strudy.first_project.firstproject;
+package com.study.first_project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
