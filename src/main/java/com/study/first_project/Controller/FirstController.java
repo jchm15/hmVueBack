@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/first")
+@RequestMapping("/v1")
 public class FirstController {
     private final FirstService firstService;
 
@@ -25,7 +25,7 @@ public class FirstController {
             @ApiResponse(code = 404, message = "page not found2")
     })
     @ApiOperation(value = "회원 목록 조회", notes = "회원 목록 조회 API입니다.")
-    @GetMapping("/0001")
+    @GetMapping("/sample")
     public ResponseEntity<List<MmbrVO>> getFirst(){
         List<MmbrVO> result = firstService.helloWorld();
         return new ResponseEntity<List<MmbrVO>>(result, HttpStatus.OK);
