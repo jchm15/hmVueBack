@@ -7,4 +7,9 @@
         select *
         from mmbr
     </select>
+
+    <insert id="insertMember" parameterType="com.study.first_project.VO.MmbrVO">
+        INSERT INTO mmbr (mmbr_id, mmbr_pwd, mmbr_nm, mmbr_join_dtm)
+        VALUES (#{mmbrId}, #{mmbrPwd}, #{mmbrNm}, now())
+    </insert>
 </mapper>

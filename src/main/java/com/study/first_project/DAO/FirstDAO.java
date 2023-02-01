@@ -8,4 +8,6 @@ import java.util.List;
 @Mapper
 public interface FirstDAO {
     List<MmbrVO> selectMmbrList();
+
+    int insertMember(MmbrVO param);
 }

@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -17,5 +18,15 @@ public class FirstServiceImpl implements FirstService {
     @Override
     public List<MmbrVO> helloWorld() {
         return dao.selectMmbrList();
+    }
+
+    @Override
+    public List<MmbrVO> selectMember() {
+        return dao.selectMmbrList();
+    }
+
+    @Override
+    public int insertMember(MmbrVO params) {
+        return dao.insertMember(params);
     }
 }
