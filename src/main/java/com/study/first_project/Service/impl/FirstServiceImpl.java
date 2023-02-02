@@ -29,4 +29,10 @@ public class FirstServiceImpl implements FirstService {
     public int insertMember(MmbrVO params) {
         return dao.insertMember(params);
     }
+
+    @Override
+    public int deleteMember(MmbrVO params) { return dao.deleteMember(params);}
+
+    @Override
+    public int updateMember(MmbrVO params) { return dao.updateMember(params);}
 }

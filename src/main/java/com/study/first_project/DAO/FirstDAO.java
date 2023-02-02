@@ -10,4 +10,8 @@ public interface FirstDAO {
     List<MmbrVO> selectMmbrList();
 
     int insertMember(MmbrVO param);
+
+    int deleteMember(MmbrVO param);
+
+    int updateMember(MmbrVO param);
 }

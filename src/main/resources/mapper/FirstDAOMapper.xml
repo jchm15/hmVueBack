@@ -6,10 +6,21 @@
     <select id="selectMmbrList" resultType="MmbrVO">
         select *
         from mmbr
+        order by mmbr_join_dtm desc
     </select>
 
     <insert id="insertMember" parameterType="com.study.first_project.VO.MmbrVO">
         INSERT INTO mmbr (mmbr_id, mmbr_pwd, mmbr_nm, mmbr_join_dtm)
         VALUES (#{mmbrId}, #{mmbrPwd}, #{mmbrNm}, now())
     </insert>
+
+    <delete id="deleteMember" parameterType="com.study.first_project.VO.MmbrVO">
+        delete from mmbr where mmbr_id = #{mmbrId}
+    </delete>
+
+    <update id="updateMember" parameterType="com.study.first_project.VO.MmbrVO">
+        update mmbr
+        set mmbr_nm = (select mmbr_nm||'_update' from mmbr where mmbr_id = #{mmbrId})
+        where mmbr_id = #{mmbrId}
+    </update>
 </mapper>

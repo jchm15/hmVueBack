@@ -11,4 +11,8 @@ public interface FirstService {
     public List<MmbrVO> selectMember();
 
     public int insertMember(MmbrVO params);
+
+    public int deleteMember(MmbrVO params);
+
+    public int updateMember(MmbrVO params);
 }
