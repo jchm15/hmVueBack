@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -28,7 +27,7 @@ public class FirstController {
     @GetMapping("/select")
     public ResponseEntity<List<MmbrVO>> getMember(){
         List<MmbrVO> result = firstService.selectMember();
-        return new ResponseEntity<List<MmbrVO>>(result, HttpStatus.OK);
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
 
@@ -40,7 +39,7 @@ public class FirstController {
     @PostMapping(value = "/insert")
     public ResponseEntity<MmbrVO> addMember(@RequestBody MmbrVO params){
         try {
-            int result = firstService.insertMember(params);
+            firstService.insertMember(params);
             return new ResponseEntity<>(params, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(params, HttpStatus.BAD_REQUEST);
@@ -55,7 +54,7 @@ public class FirstController {
     @PostMapping(value = "/delete")
     public ResponseEntity<MmbrVO> deleteMember(@RequestBody MmbrVO params){
         try {
-            int result = firstService.deleteMember(params);
+            firstService.deleteMember(params);
             return new ResponseEntity<>(params, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(params, HttpStatus.BAD_REQUEST);
@@ -70,7 +69,7 @@ public class FirstController {
     @PostMapping(value = "/update")
     public ResponseEntity<MmbrVO> updateMember(@RequestBody MmbrVO params){
         try {
-            int result = firstService.updateMember(params);
+            firstService.updateMember(params);
             return new ResponseEntity<>(params, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(params, HttpStatus.BAD_REQUEST);

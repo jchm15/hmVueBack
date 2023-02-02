@@ -16,11 +16,6 @@ public class FirstServiceImpl implements FirstService {
     private final FirstDAO dao;
 
     @Override
-    public List<MmbrVO> helloWorld() {
-        return dao.selectMmbrList();
-    }
-
-    @Override
     public List<MmbrVO> selectMember() {
         return dao.selectMmbrList();
     }

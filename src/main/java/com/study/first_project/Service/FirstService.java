@@ -6,8 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 public interface FirstService {
-    public List<MmbrVO> helloWorld();
-
     public List<MmbrVO> selectMember();
 
     public int insertMember(MmbrVO params);
